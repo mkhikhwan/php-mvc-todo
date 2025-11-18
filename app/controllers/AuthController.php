@@ -83,10 +83,46 @@ class AuthController extends Controller{
 
     public function login(){
         $this->view('auth/login', [
-            $_SESSION['flash_errors'] ?? [],
-            $_SESSION['flash_old'] ?? []
+            "errors" => $_SESSION['flash_errors'] ?? [],
+            "old" => $_SESSION['flash_old'] ?? []
         ]);
         unset($_SESSION['flash_errors'], $_SESSION['flash_old']);
+    }
+
+    public function doLogin(){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $errors = [];
+
+        // Verify if username exists
+        if($username === '' || $password === ''){
+            $errors = ['general' => "Username/Password is required."];
+        }else{
+            // Check username
+            $user = $this->userModel->findByUsername($username);
+
+            if(!$user || !password_verify($password, $user['password'])){
+                $errors = ['general' => "Username/Password is invalid."];
+            }else{
+                // Login is successful
+                echo "Successfully Logged in <br>";
+                echo "<br> Username: " . $user['username'];
+                echo "<br> Email: " . $user['email'];
+                echo "<br> Password: " . $user['password'];
+
+                // TODO: Implement session insert and redirect to tasks
+            }
+        }
+
+        if(!empty($errors)){
+            $_SESSION['flash_errors'] = $errors;
+            $_SESSION['flash_old'] = [
+                'username' => $username
+            ];
+            $this->redirect("/login");
+        }
+
     }
 }
 
