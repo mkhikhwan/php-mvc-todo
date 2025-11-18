@@ -25,6 +25,8 @@ class AuthController extends Controller{
     public function doRegister(){
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $email = $_POST['email'];
+        $confirmPassword = $_POST['confirmPassword'];
 
         $errors = [];
 
@@ -34,24 +36,49 @@ class AuthController extends Controller{
             $errors['username'] = "Username already exists.";
         }
 
+        if($email === ''){
+            $errors['email'] = "Email is required.";
+        }else if($this->userModel->findByEmail($email)){
+            $errors['email'] = "Email already exists.";
+        }
+
         if($password === ''){
             $errors['password'] = "Password is required.";
         }else if(!validatePassword($password)){
             $errors['password'] = "Password must be at least 8 characters long and contain at least one letter and one number.";
         }
 
+        if($confirmPassword === ''){
+            $errors['confirmPassword'] = "Confirm Password is required.";
+        }else if($password !== $confirmPassword){
+            $errors['confirmPassword'] = "Confirm Password does not match.";
+        }
+
         if(!empty($errors)){
             $_SESSION['flash_errors'] = $errors;
-            $_SESSION['flash_old'] = ['username' => $username];
+            $_SESSION['flash_old'] = [
+                'username' => $username,
+                'email' => $email
+            ];
             $this->redirect("/register");
         }
 
         // Ok
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $ok = $this->userModel->create($username, $email, $hashedPassword);
+        if($ok){
+            // Successfully Register
+            echo "Successfully Registered <br>";
+            echo "<br> Username: " . $username;
+            echo "<br> Email: " . $email;
+            echo "<br> Password: " . $hashedPassword;
 
-        echo "Successfully Registered <br>";
-        echo "<br> Username: " . $username;
-        echo "<br> Password: " . $hashedPassword;
+            // TODO: Auto login and redirect to /tasks
+        }else{
+            // Fail to register
+            $_SESSION['flash_errors'] = ['general' => 'Registration failed. Please try again.'];
+            $this->redirect('/register');
+        }
     }
 
     public function login(){

@@ -13,10 +13,24 @@
         <?php endif ?>
     </div>
     <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>">
+        <?php if (!empty($errors['email'])): ?>
+            <small><?php echo htmlspecialchars($errors['email']) ?></small>
+        <?php endif ?>
+    </div>
+    <div>
         <label for="password">Password</label>
         <input type="password" name="password">
         <?php if (!empty($errors['password'])): ?>
             <small><?php echo htmlspecialchars($errors['password']) ?></small>
+        <?php endif ?>
+    </div>
+    <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword">
+        <?php if (!empty($errors['confirmPassword'])): ?>
+            <small><?php echo htmlspecialchars($errors['confirmPassword']) ?></small>
         <?php endif ?>
     </div>
 
