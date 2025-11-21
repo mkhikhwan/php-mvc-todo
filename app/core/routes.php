@@ -5,6 +5,7 @@ $router = new Router();
 
 $router->get('/test', 'TestController@test');
 $router->get('/name', 'TestController@name');
+$router->get("/shownum/{num}", 'TestController@shownum');
 
 $router->get('/', 'HomeController@landingPage');
 $router->get('/register', 'AuthController@register');

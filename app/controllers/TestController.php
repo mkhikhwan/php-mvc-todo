@@ -13,6 +13,14 @@ class TestController{
         
         echo 'Your name is ' . $_GET['name'];
     }
+
+    public function shownum($num){
+        if($num == ''){
+            echo 'give a number!';
+        }
+
+        echo 'The number given is ' . $num . '!';
+    }
 }
 
 ?>

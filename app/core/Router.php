@@ -32,14 +32,28 @@ class Router{
     }
 
     public function matchRoute($method, $uri){
-        foreach ($this->routes[$method] as $route => $action) {
-            $pattern = preg_replace('#\{[a-zA-Z0-9_]+\}#', '([a-zA-Z0-9_-]+)', $route);
-            if (preg_match("#^$pattern$#", $uri, $matches)) {
+        // 1. grab the link defined in the router i.e 
+        //    $router->get('/shownum/{num}', 'TestController@shownum');
+        //    the link is '/shownum/{num}'
+        foreach($this->routes[$method] as $path => $action){
+            // 2. replace the '/shownum/{num}' to '/shownum/([a-zA-Z0-9_-]+)'
+            $pattern = preg_replace("#\{[a-zA-Z0-9_]+\}#","([a-zA-Z0-9_-]+)", $path);
+
+            // 3. Check if the url received matches the format of the defined url i.e
+            //    URL Received : '/shownum/42'
+            //    Compare URL Received == URL defined.
+            //    If match, the regex will seperate the URL string with the capturing group to:
+            //          [fullURL, Parameter]
+            //    If not matched, it will do nothing and eventually return false;
+            //    Read more on how Regex works to understand the str   ing.
+            //    Extra : we use # as delimiter in the regex because we have / in our route string.
+            if(preg_match("#^$pattern$#", $uri, $matches)){
                 array_shift($matches);
-                [$controller, $method] = explode('@', $action);
-                return [$controller, $method, $matches];
+                [$controller, $function] = explode('@',$action);
+                return [$controller, $function, $matches];
             }
         }
+
         return false;
     }
 }
