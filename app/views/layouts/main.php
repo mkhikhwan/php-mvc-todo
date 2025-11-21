@@ -9,9 +9,9 @@
         <header>
             <nav>
                 <?php if (!empty($_SESSION['user_id'])): ?>
-                    Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?> |
                     <a href="/tasks">Tasks</a> |
-                    <a href="/logout">Logout</a>
+                    <a href="/logout">Logout</a> |
+                    <?php echo htmlspecialchars($_SESSION['username']); ?>
                 <?php else: ?>
                     <a href="/login">Login</a> |
                     <a href="/register">Register</a>

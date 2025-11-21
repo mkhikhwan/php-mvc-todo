@@ -105,13 +105,9 @@ class AuthController extends Controller{
             if(!$user || !password_verify($password, $user['password'])){
                 $errors = ['general' => "Username/Password is invalid."];
             }else{
-                // Login is successful
-                echo "Successfully Logged in <br>";
-                echo "<br> Username: " . $user['username'];
-                echo "<br> Email: " . $user['email'];
-                echo "<br> Password: " . $user['password'];
-
-                // TODO: Implement session insert and redirect to tasks
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $this->redirect("/tasks");
             }
         }
 
@@ -123,6 +119,14 @@ class AuthController extends Controller{
             $this->redirect("/login");
         }
 
+    }
+
+    public function logout(){
+        session_unset();
+        session_destroy();
+
+        session_start();
+        $this->redirect("/");
     }
 }
 

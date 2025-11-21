@@ -12,6 +12,9 @@ $router->post('/register', 'AuthController@doRegister');
 
 $router->get('/login', 'AuthController@login');
 $router->post('/login', 'AuthController@doLogin');
+$router->get('/logout', 'AuthController@logout');
+
+$router->get('/tasks', 'TaskController@index');
 
 
 
