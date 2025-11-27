@@ -10,6 +10,12 @@ class Controller{
         header("Location: $url");
         exit;
     }
+
+    protected function requireLogin(){
+        if(!isset($_SESSION['user_id'])){
+            $this->redirect("/login");
+        }
+    }
 }
 
 ?>
