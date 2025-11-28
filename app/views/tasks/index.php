@@ -7,14 +7,16 @@
     <?php if(!empty($tasks)): ?>
         <?php foreach($tasks as $index => $task): ?>
             <li class="task-item">
-                <p class="task-name"><?= $task['name'] ?> <span class="task-priority task-priority-<?= $task['priority'] ?>"><?= $task['priority'] ?></span></p>
+                <div class="task-name-wrapper">
+                    <p class="task-name"><?= $task['name'] ?> <span class="task-priority task-priority-<?= $task['priority'] ?>"><?= $task['priority'] ?></span></p>
+                    <div class="task-buttons">
+                        <a href="" class="btn btn-success">Done</a> |
+                        <a href="" class="btn btn-primary">Edit</a> | 
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
                 <p class="task-desc"><?= $task['description'] ?></p>
                 <p class="task-due">Due: <?= $task['due_date'] ?></p>
-                <div style="margin-top: 10px;">
-                    <a href="" class="btn btn-success">Done</a> |
-                    <a href="" class="btn btn-primary">Edit</a> | 
-                    <a href="" class="btn btn-danger">Delete</a>
-                </div>
             </li>
         <?php endforeach ?>
     <?php else: ?>

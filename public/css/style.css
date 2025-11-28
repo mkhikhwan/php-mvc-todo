@@ -54,7 +54,7 @@ img {
 }
 
 .content {
-    padding: 50px 20px 0px 20px;
+    padding: 60px 50px 0px 50px;
 }
 
 .logo{
@@ -64,6 +64,7 @@ img {
 
 .task-list{
     margin: 10px 0px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .task-item{
@@ -78,13 +79,24 @@ img {
 
 .task-name{
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+.task-name-wrapper{
+    display: flex;
+    align-items: center;
+}
+.task-buttons{
+    margin-left: auto;
 }
 .task-desc{
     color: #6c757d;
 }
 /* TASK PRIORITY STYLING */
 .task-priority{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    margin: 0 6px;
     font-size: 10px;
     text-transform: capitalize;
     border-radius: 4px;
