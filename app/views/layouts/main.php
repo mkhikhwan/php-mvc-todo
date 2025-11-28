@@ -7,19 +7,22 @@
     </head>
     <body>
         <header>
-            <nav>
-                <?php if (!empty($_SESSION['user_id'])): ?>
-                    <a href="/tasks">Tasks</a> |
-                    <a href="/logout">Logout</a> |
-                    <?php echo htmlspecialchars($_SESSION['username']); ?>
-                <?php else: ?>
-                    <a href="/login">Login</a> |
-                    <a href="/register">Register</a>
-                <?php endif; ?>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li class="logo">PHP-TODO</li>
+                    <?php if (!empty($_SESSION['user_id'])): ?>
+                        <li><a href="/tasks">Tasks</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        <li><?php echo htmlspecialchars($_SESSION['username']); ?></li>
+                    <?php else: ?>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    <?php endif; ?>
+                </ul>
             </nav>
         </header>
 
-        <main>
+        <main class="content">
             <?php
                 // View File Include Logic
                 $viewFile = __DIR__ . "/../" . $viewPath . ".php";
