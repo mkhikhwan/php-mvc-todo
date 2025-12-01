@@ -20,6 +20,14 @@ class TaskController extends Controller{
             'tasks' => $tasks
         ]);
     }
+
+    public function addTask(){
+        $this->view('tasks/addTask');
+    }
+
+    public function doAddTask(){
+
+    }
 }
 
 ?>

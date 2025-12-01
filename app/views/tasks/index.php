@@ -3,6 +3,11 @@
 <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'] ?? '');  ?>!</h2>
 <p>Start working on tasks below!</p>
 
+<div style="margin: 12px 0px">
+    <a href="" class="btn btn-primary">Add Task</a>
+    <a href="" class="btn btn-secondary">Filter Tasks</a>
+</div>
+
 <ul class="task-list">
     <?php if(!empty($tasks)): ?>
         <?php foreach($tasks as $index => $task): ?>

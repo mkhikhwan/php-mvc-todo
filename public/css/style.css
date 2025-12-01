@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
 html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -14,14 +19,8 @@ html {
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
                  Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
     background-color: #ffffff;
     color: #222222;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }
 
 img {
@@ -92,6 +91,7 @@ img {
 .task-desc{
     color: #6c757d;
 }
+
 /* TASK PRIORITY STYLING */
 .task-priority{
     display: flex;
@@ -114,6 +114,12 @@ img {
 }
 
 /* END OF TASK PRIORITY */
+
+button{
+    font-size: 16px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+}
 
 /* BUTTON STYLING */
 .btn{
@@ -165,3 +171,35 @@ img {
 }
 
 /* END OF BUTTON STYLING */
+
+/* FORM STYLING */
+form{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group{
+    margin: 12px;
+    display: flex;
+}
+.form-label{
+    font-weight:500;
+    min-width: 180px;
+}
+/* END OF FORM STYLING */
