@@ -1,15 +1,18 @@
 <h1>Tasks</h1>
 
-<h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'] ?? '');  ?>!</h2>
-<p>Start working on tasks below!</p>
+<div class="header-area">
+    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'] ?? '');  ?>!</h2>
+    <p>Start working on tasks below!</p>
+</div>
 
 <?php if(!empty($message['success'])): ?>
-<div class="flash-message flash-message-success">
-    <?php echo htmlspecialchars($message['success']) ?>
+<div class="flash flash-success">
+    <p><?php echo htmlspecialchars($message['success']) ?></p>
+    <div class="flash-closeButton">&times;</div>
 </div>
 <?php endif ?>
 
-<div style="margin: 12px 0px">
+<div style="margin: 8px 0px">
     <a href="/tasks/add" class="btn btn-primary">Add Task</a>
     <a href="" class="btn btn-secondary">Filter Tasks</a>
 </div>

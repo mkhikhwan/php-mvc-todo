@@ -61,6 +61,12 @@ img {
     font-size: 24px;
 }
 
+/* Layout Styling */
+.header-area{
+    margin: 4px 0px;
+}
+/* End of Layout Styling */
+
 .task-list{
     margin: 10px 0px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -208,3 +214,25 @@ textarea {
     max-width: 600px;
 }
 /* END OF FORM STYLING */
+
+/* FLASH MESSAGE STYLING */
+.flash{
+    margin: 16px 0px;
+    padding: 8px 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flash-closeButton{
+    justify-content: right;
+    cursor:pointer;
+    font-size: 24px;
+    font-weight: 600;
+    user-select: none;
+}
+.flash-success{
+    background-color: #DFFFD6;
+    border: 1px solid #C2EAB0;
+}
+/* END OF FLASH MESSAGE */
