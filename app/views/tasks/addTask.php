@@ -1,6 +1,6 @@
 <h1>Add Task</h1>
 
-<form action="" method="POST">
+<form action="" method="POST" class="add-task-form" id="add-task-form">
     <!-- name -->
     <div class="form-group">
         <label for="task-name" class="form-label">Task Name:</label>
@@ -16,7 +16,7 @@
     <!-- due_date -->
     <div class="form-group">
         <label for="task-due" class="form-label">Task Due Date:</label>
-        <input type="datetime" name="task-due">
+        <input type="datetime-local" name="task-due">
     </div>
 
     <!-- priority -->
@@ -29,8 +29,8 @@
         </select>
     </div>
     
-    <button id="taskAddSubmit" onclick="alert('Form Submitted')" class="btn btn-primary">Submit</button>
-    <button id="taskAddClear" onclick="alert('Clear Form')" class="btn btn-secondary">Clear Form</button>
+    <button type="submit" id="taskAddSubmit" class="btn btn-primary">Submit</button>
+    <button type="button" id="taskAddClear" onclick="addTaskClear()" class="btn btn-secondary">Clear Form</button>
 </form>
 <!-- 
 #	Name	Type	Collation	Attributes	Null	Default	Comments	Extra	Action

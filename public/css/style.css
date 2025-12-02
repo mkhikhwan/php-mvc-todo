@@ -202,4 +202,9 @@ textarea {
     font-weight:500;
     min-width: 180px;
 }
+
+.add-task-form{
+    min-width: 50%;
+    max-width: 600px;
+}
 /* END OF FORM STYLING */
