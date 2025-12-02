@@ -17,8 +17,10 @@ class TaskController extends Controller{
         
         $tasks = $this->taskModel->getAllTasks($_SESSION['user_id']);
         $this->view('tasks/index', [
+            'message' => $_SESSION['flash_message'] ?? [],
             'tasks' => $tasks
         ]);
+        unset($_SESSION['flash_message']);
     }
 
     public function addTask(){
@@ -26,7 +28,18 @@ class TaskController extends Controller{
     }
 
     public function doAddTask(){
+        $user_id = $_SESSION['user_id'];
+        $taskName = $_POST["task-name"];
+        $taskDescription = $_POST["task-description"];
+        $taskDue = $_POST["task-due"];
+        $taskPriority = $_POST["task-priority"];
 
+        $ok = $this->taskModel->create($user_id, $taskName, $taskDescription, $taskDue, $taskPriority);
+
+        if($ok){
+            $_SESSION['flash_message'] = ['success' => 'Add Task Successfully.'];
+            $this->redirect("/tasks");
+        }
     }
 }
 

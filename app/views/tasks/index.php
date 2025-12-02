@@ -3,8 +3,14 @@
 <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'] ?? '');  ?>!</h2>
 <p>Start working on tasks below!</p>
 
+<?php if(!empty($message['success'])): ?>
+<div class="flash-message flash-message-success">
+    <?php echo htmlspecialchars($message['success']) ?>
+</div>
+<?php endif ?>
+
 <div style="margin: 12px 0px">
-    <a href="" class="btn btn-primary">Add Task</a>
+    <a href="/tasks/add" class="btn btn-primary">Add Task</a>
     <a href="" class="btn btn-secondary">Filter Tasks</a>
 </div>
 

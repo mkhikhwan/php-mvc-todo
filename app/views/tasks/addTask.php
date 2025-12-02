@@ -32,13 +32,3 @@
     <button type="submit" id="taskAddSubmit" class="btn btn-primary">Submit</button>
     <button type="button" id="taskAddClear" onclick="addTaskClear()" class="btn btn-secondary">Clear Form</button>
 </form>
-<!-- 
-#	Name	Type	Collation	Attributes	Null	Default	Comments	Extra	Action
-	1	id Primary	int			No	None		AUTO_INCREMENT	Change Change	Drop Drop	
-	2	user_id Index	int			No	None			Change Change	Drop Drop	
-	3	name	varchar(255)	utf8mb4_0900_ai_ci		No	None			Change Change	Drop Drop	
-	4	description	text	utf8mb4_0900_ai_ci		Yes	NULL			Change Change	Drop Drop	
-	5	created_date	datetime			No	CURRENT_TIMESTAMP		DEFAULT_GENERATED	Change Change	Drop Drop	
-	6	due_date	datetime			Yes	NULL			Change Change	Drop Drop	
-	7	priority	enum('low', 'medium', 'high')	utf8mb4_0900_ai_ci		No	low			Change Change	Drop Drop
--->
