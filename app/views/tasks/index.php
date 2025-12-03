@@ -23,10 +23,10 @@
             <li class="task-item">
                 <div class="task-name-wrapper">
                     <p class="task-name"><?= $task['name'] ?> <span class="task-priority task-priority-<?= $task['priority'] ?>"><?= $task['priority'] ?></span></p>
-                    <div class="task-buttons">
-                        <a href="" class="btn btn-success">Done</a> |
-                        <a href="" class="btn btn-primary">Edit</a> | 
-                        <a href="" class="btn btn-danger">Delete</a>
+                    <div class="task-buttons" data-id="<?= $task['id'] ?>">
+                        <button class="btn btn-success btn-done">Done</button> |
+                        <button class="btn btn-primary btn-edit">Edit</button> | 
+                        <button class="btn btn-danger btn-delete">Delete</button>
                     </div>
                 </div>
                 <p class="task-desc"><?= $task['description'] ?></p>

@@ -23,6 +23,13 @@ class Task{
             ':priority' => $taskPriority
         ]);
     }
+
+    public function deleteTask($task_id){
+        $stmt = $this->pdo->prepare("DELETE FROM Tasks WHERE id = :id");
+        return $stmt->execute([
+            ':id' => $task_id
+        ]);
+    }
 }
 
 

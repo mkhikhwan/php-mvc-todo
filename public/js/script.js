@@ -1,35 +1,71 @@
 // Add Task Form
 const addTaskForm = document.getElementById("add-task-form");
-document.getElementById("add-task-form").addEventListener('submit', (e)=>{
-    const data = new FormData(addTaskForm);
-    let errors = [];
+if(addTaskForm){
+    document.getElementById("add-task-form").addEventListener('submit', (e)=>{
+        const data = new FormData(addTaskForm);
+        let errors = [];
 
-    for (const [key, value] of data.entries()) {
-        console.log(key, value);
-    }
+        for (const [key, value] of data.entries()) {
+            console.log(key, value);
+        }
 
-    if (data.get("task-name") === ''){
-        errors.push("Task Name is empty.");
-    } 
+        if (data.get("task-name") === ''){
+            errors.push("Task Name is empty.");
+        } 
 
-    if (data.get("task-due") === ''){
-        errors.push("Task Due is empty.");
-    } 
+        if (data.get("task-due") === ''){
+            errors.push("Task Due is empty.");
+        } 
 
-    if (data.get("task-priority") === ''){
-        errors.push("Task Priority is empty.");
-    }
+        if (data.get("task-priority") === ''){
+            errors.push("Task Priority is empty.");
+        }
 
-    if(errors.length !== 0){
-        e.preventDefault();
+        if(errors.length !== 0){
+            e.preventDefault();
 
-        let errorMsg = "There is an error on the form: \n";
-        errors.forEach(err => {
-            errorMsg += "- " + err + "\n";
+            let errorMsg = "There is an error on the form: \n";
+            errors.forEach(err => {
+                errorMsg += "- " + err + "\n";
+            });
+
+            alert(errorMsg);
+        }else{
+            // Submit Successful
+        }
+    });
+}
+
+
+// Task Button Actions
+const taskButtons = document.querySelectorAll(".task-buttons");
+if(taskButtons){
+    taskButtons.forEach((e)=>{
+        const taskId = e.dataset.id;
+
+        const deleteButton = e.querySelector(".btn-delete");
+        deleteButton.addEventListener('click', ()=>{
+            const delConfirm = confirm('Are you sure you want to delete?');
+            if(delConfirm){
+                callServer( 'tasks/delete', { 'id': taskId } );
+            }
         });
+    });
+}
 
-        alert(errorMsg);
-    }else{
-        // Submit Successful
+function callServer(url, data){
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = url;
+
+    for(const key in data){
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
     }
-});
+
+    document.body.appendChild(form);
+    form.submit();
+}
