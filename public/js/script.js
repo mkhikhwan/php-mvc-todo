@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', ()=>{
+    const flashMessage = document.querySelector(".flash");
+    if(flashMessage){
+        // If there is flash message, auto close it after a few seconds.
+        setTimeout(()=>{
+            flashMessage.style.opacity = "0";
+            flashMessage.style.transition = "opacity 0.5s";
+            setTimeout(()=>{
+                flashMessage.remove()
+            }, 500);
+        }, 5000);
+
+        const closeButton = flashMessage.querySelector(".flash-closeButton");
+        if(closeButton){
+            closeButton.addEventListener('click', ()=>{
+                flashMessage.remove();
+            });
+        }
+    }
+});
+
 // Add Task Form
 const addTaskForm = document.getElementById("add-task-form");
 if(addTaskForm){
