@@ -71,6 +71,20 @@ if(taskButtons){
                 callServer( 'tasks/delete', { 'id': taskId } );
             }
         });
+
+        const doneButton = e.querySelector(".btn-done");
+        const undoneButton = e.querySelector(".btn-unDone");
+
+        if(doneButton){
+            doneButton.addEventListener('click', ()=>{
+                callServer( 'tasks/setDone', { 'id': taskId } );
+            });
+        }
+        else if(undoneButton){
+            undoneButton.addEventListener('click', ()=>{
+                callServer( 'tasks/setUndone', { 'id': taskId } );
+            });
+        }
     });
 }
 

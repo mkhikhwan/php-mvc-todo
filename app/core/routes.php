@@ -19,5 +19,6 @@ $router->get('/tasks', 'TaskController@index');
 $router->get('/tasks/add', 'TaskController@addTask');
 $router->post('/tasks/add', 'TaskController@doAddTask');
 $router->post('/tasks/delete', 'TaskController@deleteTask');
+$router->post('/tasks/setDone', 'TaskController@setDoneTask');
 
 ?>

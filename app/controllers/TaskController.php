@@ -14,7 +14,7 @@ class TaskController extends Controller{
     
     public function index(){
         $this->requireLogin();
-        
+
         $tasks = $this->taskModel->getAllTasks($_SESSION['user_id']);
         $this->view('tasks/index', [
             'message' => $_SESSION['flash_message'] ?? [],
@@ -53,6 +53,20 @@ class TaskController extends Controller{
         $ok = $this->taskModel->deleteTask($taskId);
         if($ok){
             $_SESSION['flash_message'] = ['success' => 'Task deleted successfully'];
+            $this->redirect("/tasks");
+        }
+    }
+
+    public function setDoneTask(){
+        $taskId = $_POST['id'];
+
+        if(!isset($taskId)){
+            $_SESSION['flash_message'] = ['error' => "There's soemthing wrong with performing the action. Please try again."];
+            $this->redirect("/tasks");
+        }
+
+        $ok = $this->taskModel->setDoneTask($taskId);
+        if($ok){
             $this->redirect("/tasks");
         }
     }

@@ -97,6 +97,11 @@ img {
 .task-desc{
     color: #6c757d;
 }
+.task-done{
+    color: #999;
+    text-decoration: line-through;
+    opacity: 0.9;
+}
 
 /* TASK PRIORITY STYLING */
 .task-priority{
