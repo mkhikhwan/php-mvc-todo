@@ -31,11 +31,11 @@ class Task{
         ]);
     }
 
-    public function setDoneTask($task_id){
+    public function setTaskDone($task_id, $isDone){
         $stmt = $this->pdo->prepare("UPDATE Tasks SET is_done = :d WHERE id = :id");
         return $stmt->execute([
             ':id' => $task_id,
-            ':d' => true
+            ':d' => $isDone ? 1 : 0
         ]);
     }
 }

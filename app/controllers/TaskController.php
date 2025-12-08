@@ -57,15 +57,16 @@ class TaskController extends Controller{
         }
     }
 
-    public function setDoneTask(){
+    public function setTaskDone(){
         $taskId = $_POST['id'];
+        $isDone = filter_var($_POST['isDone'], FILTER_VALIDATE_BOOLEAN);
 
         if(!isset($taskId)){
             $_SESSION['flash_message'] = ['error' => "There's soemthing wrong with performing the action. Please try again."];
             $this->redirect("/tasks");
         }
 
-        $ok = $this->taskModel->setDoneTask($taskId);
+        $ok = $this->taskModel->setTaskDone($taskId, $isDone);
         if($ok){
             $this->redirect("/tasks");
         }

@@ -77,12 +77,12 @@ if(taskButtons){
 
         if(doneButton){
             doneButton.addEventListener('click', ()=>{
-                callServer( 'tasks/setDone', { 'id': taskId } );
+                callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : true } );
             });
         }
         else if(undoneButton){
             undoneButton.addEventListener('click', ()=>{
-                callServer( 'tasks/setUndone', { 'id': taskId } );
+                callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : false } );
             });
         }
     });
