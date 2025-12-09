@@ -23,6 +23,13 @@ class TaskController extends Controller{
         unset($_SESSION['flash_message']);
     }
 
+    public function viewTask($taskId){
+        $task = $this->taskModel->viewTask($taskId);
+        $this->view('tasks/viewTask', [
+            'task' => $task
+        ]);
+    }
+
     public function addTask(){
         $this->view('tasks/addTask');
     }

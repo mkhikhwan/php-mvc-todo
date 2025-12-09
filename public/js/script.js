@@ -59,33 +59,44 @@ if(addTaskForm){
 
 
 // Task Button Actions
-const taskButtons = document.querySelectorAll(".task-buttons");
-if(taskButtons){
-    taskButtons.forEach((e)=>{
-        const taskId = e.dataset.id;
+const taskItems = document.querySelectorAll(".task-item");
+if(taskItems){
+    taskItems.forEach((taskItem)=>{
+        // Apply Events to Task Buttons
+        const taskButtons = taskItem.querySelector(".task-buttons");
+        const taskId = taskButtons.dataset.id;
+        applyTaskButtonActions(taskButtons, taskId);
 
-        const deleteButton = e.querySelector(".btn-delete");
-        deleteButton.addEventListener('click', ()=>{
-            const delConfirm = confirm('Are you sure you want to delete?');
-            if(delConfirm){
-                callServer( 'tasks/delete', { 'id': taskId } );
-            }
+        // Apply Events to Task Name for Task View
+        const taskName = taskItem.querySelector(".task-name p");
+        taskName.addEventListener('click',()=>{
+            window.location.href = "/tasks/view/" + taskId;
         });
+    });
+}
 
-        const doneButton = e.querySelector(".btn-done");
-        const undoneButton = e.querySelector(".btn-unDone");
-
-        if(doneButton){
-            doneButton.addEventListener('click', ()=>{
-                callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : true } );
-            });
-        }
-        else if(undoneButton){
-            undoneButton.addEventListener('click', ()=>{
-                callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : false } );
-            });
+function applyTaskButtonActions(taskButtons, taskId){
+    const deleteButton = taskButtons.querySelector(".btn-delete");
+    deleteButton.addEventListener('click', ()=>{
+        const delConfirm = confirm('Are you sure you want to delete?');
+        if(delConfirm){
+            callServer( 'tasks/delete', { 'id': taskId } );
         }
     });
+
+    const doneButton = taskButtons.querySelector(".btn-done");
+    const undoneButton = taskButtons.querySelector(".btn-unDone");
+
+    if(doneButton){
+        doneButton.addEventListener('click', ()=>{
+            callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : true } );
+        });
+    }
+    else if(undoneButton){
+        undoneButton.addEventListener('click', ()=>{
+            callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : false } );
+        });
+    }
 }
 
 function callServer(url, data){

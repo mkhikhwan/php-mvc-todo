@@ -38,6 +38,15 @@ class Task{
             ':d' => $isDone ? 1 : 0
         ]);
     }
+
+    public function viewTask($task_id){
+        $stmt = $this->pdo->prepare("SELECT * FROM Tasks WHERE id = :task_id LIMIT 1");
+        $stmt->execute([
+            ':task_id' => filter_var($task_id, FILTER_VALIDATE_INT)
+        ]);
+        
+        return $stmt->fetch();
+    }
 }
 
 

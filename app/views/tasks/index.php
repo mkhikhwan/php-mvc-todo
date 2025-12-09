@@ -22,10 +22,10 @@
         <?php foreach($tasks as $index => $task): ?>
             <li class="task-item">
                 <div class="task-name-wrapper">
-                    <p class="task-name <?= $task['is_done'] ? 'task-done' : '' ?>">
-                        <?= htmlspecialchars($task['name']) ?> 
+                    <div class="task-name <?= $task['is_done'] ? 'task-done' : '' ?>">
+                        <p><?= htmlspecialchars($task['name']) ?></p> 
                         <span class="task-priority task-priority-<?= $task['priority'] ?>"><?= $task['priority'] ?></span>
-                    </p>
+                    </div>
                     <div class="task-buttons" data-id="<?= $task['id'] ?>">
                         <button class="btn btn-success <?= $task['is_done'] ? 'btn-unDone' : 'btn-done' ?>">
                             <?= $task['is_done'] ? 'Un-done' : 'Done' ?>

@@ -102,12 +102,15 @@ img {
     text-decoration: line-through;
     opacity: 0.9;
 }
+.task-name p{
+    cursor: pointer;
+    margin-right: 8px;
+}
 
 /* TASK PRIORITY STYLING */
 .task-priority{
     display: flex;
     align-items: center;
-    margin: 0 6px;
     font-size: 10px;
     text-transform: capitalize;
     border-radius: 4px;
