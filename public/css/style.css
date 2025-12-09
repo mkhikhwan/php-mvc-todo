@@ -42,7 +42,6 @@ img {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     z-index: 999;
 }
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -61,6 +60,39 @@ img {
     font-size: 24px;
 }
 
+.hero-banner{
+    margin: -10px -50px -0px -50px;
+    display: flex;
+    min-height: 400px;
+    background-color: #D4C4FB;
+    justify-content: left;
+}
+
+.hero-left-side{
+    height: auto;
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+}
+.hero-left-side-content{
+    width: 100%;
+    margin: auto 0px;
+    align-items: center;
+}
+.hero-left-side h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.hero-left-side h3{
+    font-weight: 450;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.hero-right-side{
+    min-width: 30%;
+    width: auto;
+    height: auto;
+}
 /* Layout Styling */
 .header-area{
     margin: 4px 0px;
