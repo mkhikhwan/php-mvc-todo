@@ -11,11 +11,6 @@
             <a href="/tasks" class="btn btn-primary">Let's Start</a>
         </div>
     </div>
-
-    <!-- Right Side -->
-    <!-- <div class="hero-right-side">
-        
-    </div> -->
 </div>
 
 <div class="features-section">
