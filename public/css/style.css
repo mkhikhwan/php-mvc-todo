@@ -52,7 +52,7 @@ img {
 }
 
 .content {
-    padding: 60px 50px 0px 50px;
+    padding: 60px 50px 40px 50px;
 }
 
 .logo{
@@ -63,36 +63,70 @@ img {
 .hero-banner{
     margin: -10px -50px -0px -50px;
     display: flex;
-    min-height: 400px;
+    min-height: 350px;
     background-color: #D4C4FB;
     justify-content: left;
 }
-
 .hero-left-side{
+    width: 100%;
     height: auto;
     flex: 1;
     padding: 2rem;
     display: flex;
+    justify-content: center;
 }
 .hero-left-side-content{
-    width: 100%;
+    width: 50%;
     margin: auto 0px;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .hero-left-side h1{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
+    margin-bottom: 24px;
 }
 .hero-left-side h3{
     font-weight: 450;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
-.hero-right-side{
-    min-width: 30%;
-    width: auto;
-    height: auto;
+
+.features-section h1{
+    vertical-align: 
+    text-align: center;
+    margin: 24px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.5rem;
+    min-height: calc(1.5rem * 2);
 }
+.feature-card-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.feature-card{
+    border: 2px solid #cccccc;
+    border-radius: 6px;
+    box-shadow: -5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    min-height: 240px;
+    padding: 24px;
+}
+.feature-card-icon{
+    margin-bottom: 12px 0px;
+}
+.feature-card-icon svg{
+    width: 40px;
+    height: 40px;
+}
+.feature-card-title{
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
 /* Layout Styling */
 .header-area{
     margin: 4px 0px;

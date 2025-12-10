@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    feather.replace();
+    
     const flashMessage = document.querySelector(".flash");
     if(flashMessage){
         // If there is flash message, auto close it after a few seconds.

@@ -3,6 +3,7 @@
     <head>
         <title>PHP Todo</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/public/css/style.css">
 
     </head>
@@ -35,6 +36,7 @@
             ?>
         </main>
 
-         <script src="/public/js/script.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="/public/js/script.js"></script>
     </body>
 </html>
