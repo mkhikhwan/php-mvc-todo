@@ -4,11 +4,18 @@
     <div class="hero-left-side">
         <div class="hero-left-side-content">
             <h1>PHP MVC To-Do App</h1>
-            <h3>
+            <h3 style="text-align:justify">
                 A simple, handcrafted task manager built from scratch to explore core concepts like routing, controllers, and clean MVC architecture. 
                 Learn, experiment, and see how everything fits together, one feature at a time.
             </h3>
-            <a href="/tasks" class="btn btn-primary">Let's Start</a>
+            <a href="/tasks" class="btn" style="
+                font-size: 1.5rem;
+                font-weight: 600;
+                border: 2px solid #cccccc;
+                width:100%;
+                margin-top: 16px;
+                border-radius:12px;
+            ">Let's Start</a>
         </div>
     </div>
 </div>
