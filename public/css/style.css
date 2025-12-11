@@ -208,11 +208,10 @@ img {
 }
 /* End Registration Login Page */
 
-/* Layout Styling */
-.header-area{
-    margin: 4px 0px;
+/* TASK MANAGEMENT */
+.main-content{
+    margin: 32px;
 }
-/* End of Layout Styling */
 
 .task-list{
     margin: 10px 0px; 
@@ -273,7 +272,6 @@ img {
 .task-priority-high {
     background-color: #ff0033;
 }
-
 /* END OF TASK PRIORITY */
 
 button{
