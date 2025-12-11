@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     feather.replace();
+    document.querySelector(".logo").addEventListener('click',()=>{
+        window.location.href = "/";
+    });
     
     const flashMessage = document.querySelector(".flash");
     if(flashMessage){

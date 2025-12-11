@@ -63,6 +63,8 @@ img {
 .logo{
     font-weight: bold;
     font-size: 24px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .hero-banner{
@@ -283,7 +285,7 @@ button{
 /* BUTTON STYLING */
 .btn{
     display: inline-block;
-    padding: 3px 10px;
+    padding: 4px 12px;
     border: none;
     border-radius: 6px;
     text-decoration: none;
@@ -292,41 +294,49 @@ button{
     color: #ffffff;
 }
 
+/* PRIMARY / BRAND */
 .btn-primary {
-    background-color: #2a9d8f; /* teal-ish, clean on white/black */
+    background-color: #1976D2; /* Calm Blue */
+    color: #fff;
 }
 .btn-primary:hover {
-    background-color: #21867a;
+    background-color: #155fad; /* darker blue */
 }
 
+/* ACCENT / ACTION */
+.btn-warning {
+    background-color: #FF9800; /* Vibrant Orange */
+    color: #fff;
+}
+.btn-warning:hover {
+    background-color: #e68900; /* darker orange */
+}
+
+/* STATUS: SUCCESS */
+.btn-success {
+    background-color: #4CAF50; /* Muted Green */
+    color: #fff;
+}
+.btn-success:hover {
+    background-color: #429746; /* darker green */
+}
+
+/* STATUS: ERROR / URGENT */
 .btn-danger {
-    background-color: #ff0033; /* bright prism red */
+    background-color: #D32F2F; /* Warning Red */
     color: #fff;
 }
 .btn-danger:hover {
-    background-color: #d9002c; /* slightly darker for hover */
+    background-color: #b72828; /* darker red */
 }
 
-.btn-warning {
-    background-color: #ffcc00; /* clean warning yellow */
-    color: #fff; /* white text still readable */
-}
-.btn-warning:hover {
-    background-color: #e6b800; /* darker yellow hover */
-}
-
+/* SECONDARY (NEUTRAL GREY) */
 .btn-secondary {
-    background-color: #6c757d; /* grey */
+    background-color: #333333; /* Dark charcoal */
+    color: #fff;
 }
 .btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-.btn-success {
-    background-color: #43aa8b; /* muted green, works well with black & white */
-}
-.btn-success:hover {
-    background-color: #389978;
+    background-color: #1f1f1f; /* darker charcoal */
 }
 
 /* END OF BUTTON STYLING */
