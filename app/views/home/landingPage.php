@@ -21,7 +21,7 @@
             <div class="feature-card-icon">
                 <i data-feather="align-left"></i>
             </div>
-            <p class="feature-card-title">Task Management</p>
+            <p class="feature-card-title">Task<br>Management</p>
             <p class="feature-card-desc">Add tasks with titles, descriptions, due dates, and priority levels. 
                 Update them anytime or mark them as complete when you're done. 
                 Everything is designed to keep your workflow clean and structured.</p>
@@ -32,7 +32,7 @@
             <div class="feature-card-icon">
                 <i data-feather="users"></i>
             </div>
-            <p class="feature-card-title">Secure User Accounts</p>
+            <p class="feature-card-title">Secure<br>User Accounts</p>
             <p class="feature-card-desc">
                 Register an account, log in securely, and manage your own private to-do list.
                 Only authenticated users can access task features, keeping your tasks safe
@@ -45,7 +45,7 @@
             <div class="feature-card-icon">
                 <i data-feather="filter"></i>
             </div>
-            <p class="feature-card-title">Filtering & Sorting Tools</p>
+            <p class="feature-card-title">Filtering & <br>Sorting Tools</p>
             <p class="feature-card-desc">
                 Filter tasks by status, priority, or due dates. Sort them by importance or
                 deadlines so you can focus on what matters most and keep your workflow
@@ -58,7 +58,7 @@
             <div class="feature-card-icon">
                 <i data-feather="share-2"></i>
             </div>
-            <p class="feature-card-title">Built With MVC Architecture</p>
+            <p class="feature-card-title">Built With <br>MVC Architecture</p>
             <p class="feature-card-desc">
                 The app is structured using a custom MVC pattern with clean routing,
                 controllers, models, and views. Designed to help you understand how full

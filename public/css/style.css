@@ -68,7 +68,7 @@ img {
 .hero-banner{
     display: flex;
     min-height: 350px;
-    background-color: #D4C4FB;
+    background-color: #1976D2;
     justify-content: left;
 }
 .hero-left-side{
@@ -85,6 +85,7 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: white;
 }
 .hero-left-side h1{
     font-size: 3rem;
@@ -98,8 +99,9 @@ img {
 }
 
 .features-section h1{
-    vertical-align: 
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 24px;
     font-size: 2rem;
     font-weight: 800;
