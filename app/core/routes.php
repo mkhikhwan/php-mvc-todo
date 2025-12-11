@@ -21,5 +21,7 @@ $router->get('/tasks/add', 'TaskController@addTask');
 $router->post('/tasks/add', 'TaskController@doAddTask');
 $router->post('/tasks/delete', 'TaskController@deleteTask');
 $router->post('/tasks/setTaskDone', 'TaskController@setTaskDone');
+$router->get('/tasks/edit/{id}', 'TaskController@editTask');
+$router->post('/tasks/edit/{id}', 'TaskController@doEditTask');
 
 ?>

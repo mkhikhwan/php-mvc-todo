@@ -78,6 +78,28 @@ class TaskController extends Controller{
             $this->redirect("/tasks");
         }
     }
+
+    public function editTask($taskId){
+        $task = $this->taskModel->viewTask($taskId);
+        $this->view('tasks/editTask', [
+            'priority' => ['low', 'medium', 'high'],
+            'task' => $task
+        ]);
+    }
+
+    public function doEditTask($taskId){
+        $user_id = $_SESSION['user_id'];
+        $taskName = $_POST["task-name"];
+        $taskDescription = $_POST["task-description"];
+        $taskDue = $_POST["task-due"];
+        $taskPriority = $_POST["task-priority"];
+
+        $ok = $this->taskModel->editTask($taskId, $taskName, $taskDescription, $taskDue, $taskPriority);
+        if($ok){
+            $_SESSION['flash_message'] = ['success' => 'Edit Task Successful.'];
+            $this->redirect("/tasks");
+        }
+    }
 }
 
 ?>

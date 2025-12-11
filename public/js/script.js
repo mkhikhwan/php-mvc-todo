@@ -99,6 +99,11 @@ function applyTaskButtonActions(taskButtons, taskId){
             callServer( 'tasks/setTaskDone', { 'id': taskId, 'isDone' : false } );
         });
     }
+
+    const editButton = taskButtons.querySelector(".btn-edit");
+    editButton.addEventListener('click', ()=>{
+        window.location.href = "/tasks/edit/" + taskId;
+    });
 }
 
 function callServer(url, data){

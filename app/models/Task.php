@@ -47,6 +47,24 @@ class Task{
         
         return $stmt->fetch();
     }
+
+    public function editTask($task_id, $taskname, $taskdescription, $taskDue, $taskPriority){
+        $stmt = $this->pdo->prepare("
+            UPDATE Tasks SET
+                name = :name, 
+                description = :desc, 
+                due_date = :due, 
+                priority = :priority
+            WHERE id = :task_id
+        ");
+        return $stmt->execute([
+            ':task_id' => $task_id,
+            ':name' => $taskname,
+            ':desc' => $taskdescription,
+            ':due' => $taskDue,
+            ':priority' => $taskPriority
+        ]);
+    }
 }
 
 
