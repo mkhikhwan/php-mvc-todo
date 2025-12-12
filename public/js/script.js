@@ -62,6 +62,15 @@ if(addTaskForm){
     });
 }
 
+// Filter Task
+const filterButton = document.querySelector(".btn-filter");
+if(filterButton){
+    const filterDiv = document.querySelector(".filter-menu");
+    filterButton.addEventListener('click', ()=>{
+        filterDiv.style.display = 
+            filterDiv.style.display === "none" ? "block" : "none";
+    });
+}
 
 // Task Button Actions
 const taskItems = document.querySelectorAll(".task-item");

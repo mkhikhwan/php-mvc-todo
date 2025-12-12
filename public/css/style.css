@@ -342,6 +342,7 @@ button{
 .btn-ghost{
     background-color: transparent;
     color: black;
+    border: 2px #1976D2 solid;
 }
 .btn-ghost:hover {
     color:white;
@@ -379,6 +380,8 @@ textarea {
 .form-label{
     font-weight:500;
     min-width: 180px;
+    display: flex;
+    align-items: center;
 }
 
 .add-task-form{
@@ -408,3 +411,14 @@ textarea {
     border: 1px solid #C2EAB0;
 }
 /* END OF FLASH MESSAGE */
+
+
+/* FILTER MENU */
+.filter-menu{
+    display: none;
+}
+
+.chk{
+    width: 20px;
+    height: 20px;
+}

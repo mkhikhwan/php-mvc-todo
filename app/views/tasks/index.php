@@ -15,7 +15,61 @@
 
     <div style="margin: 8px 0px">
         <a href="/tasks/add" class="btn btn-primary">Add Task</a>
-        <a href="" class="btn btn-secondary">Filter Tasks</a>
+        <button class="btn btn-secondary btn-filter">Filter Tasks</button>
+    </div>
+
+    <div class="filter-menu">
+        <form action="" method="GET">
+
+            <!-- Completion -->
+            <div class="form-group">
+                <label class="form-label">Task Completion:</label>
+                <select name="completion">
+                    <option value="">All</option>
+                    <option value="1">Completed</option>
+                    <option value="0">Incomplete</option>
+                </select>
+            </div>
+
+            <!-- Due Date Range -->
+            <div class="form-group">
+                <label class="form-label">Due Date Range:</label>
+                <input type="datetime-local" name="due_after">
+                <p style="font-weight: 600; display:flex; align-items:center; font-size:20px; margin: 0px 1rem;"> ~ </p>
+                <input type="datetime-local" name="due_before">
+            </div>
+
+            <!-- Priority -->
+            <div class="form-group">
+                <label class="form-label">Priority:</label>
+                <div style="display:block;">
+                    <label style="display:flex; gap:20px; margin-bottom:16px;">
+                        <input type="checkbox" class="chk" name="priority[]" value="low">
+                        <span class="task-priority task-priority-low">low</span>
+                    </label>
+
+                    <label style="display:flex; gap:20px; margin-bottom:16px;">
+                        <input type="checkbox" class="chk" name="priority[]" value="medium">
+                        <span class="task-priority task-priority-medium">medium</span>
+                    </label>
+
+                    <label style="display:flex; gap:20px;">
+                        <input type="checkbox" class="chk" name="priority[]" value="high">
+                        <span class="task-priority task-priority-high">high</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label class="form-label">Task Name:</label>
+                <input type="text" name="name" placeholder="Grab some milk...">
+            </div>
+
+            <div style="display:flex; justify-content:left;">
+                <button class="btn btn-ghost" style="width:240px;">Filter</button>
+            </div>
+        </form>
     </div>
 
     <ul class="task-list">
