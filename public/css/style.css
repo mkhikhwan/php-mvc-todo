@@ -285,7 +285,7 @@ button{
 /* BUTTON STYLING */
 .btn{
     display: inline-block;
-    padding: 4px 12px;
+    padding: 8px 16px;
     border: none;
     border-radius: 6px;
     text-decoration: none;
@@ -344,6 +344,7 @@ button{
     color: black;
 }
 .btn-ghost:hover {
+    color:white;
     background-color: #1976D2;
 }
 

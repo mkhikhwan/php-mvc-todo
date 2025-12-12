@@ -33,6 +33,7 @@
         </div>
         
         <a class="btn btn-secondary" href="/tasks">Back</a>
-        <a class="btn btn-warning" href="/tasks/edit/<?= $task['id'] ?>">Edit</a>
+        <a class="btn btn-ghost" href="/tasks/edit/<?= $task['id'] ?>">Edit</a>
+
     </div>
 </div>

@@ -30,7 +30,8 @@
             </select>
         </div>
         
-        <button type="submit" id="taskAddSubmit" class="btn btn-primary">Submit</button>
-        <button type="button" id="taskAddClear" onclick="addTaskClear()" class="btn btn-secondary">Clear Form</button>
+        <a href="/tasks" class="btn btn-primary">Back</a>
+        <button type="submit" id="taskAddSubmit" class="btn btn-success">Submit</button>
+        <button type="button" id="taskAddClear" onclick="addTaskClear()" class="btn btn-ghost">Clear Form</button>
     </form>
 </div>

@@ -4,7 +4,7 @@
     <div class="hero-left-side">
         <div class="hero-left-side-content">
             <h1>PHP MVC To-Do App</h1>
-            <h3 style="text-align:justify">
+            <h3 style="text-align:justify; text-align-last:center;">
                 A simple, handcrafted task manager built from scratch to explore core concepts like routing, controllers, and clean MVC architecture. 
                 Learn, experiment, and see how everything fits together, one feature at a time.
             </h3>
