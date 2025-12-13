@@ -8,8 +8,39 @@ class Task{
     }
 
     public function getAllTasks($user_id){
-        $query = $this->pdo->prepare("SELECT * FROM tasks where user_id = :u ORDER BY created_date DESC");
-        $query->execute([':u' => $user_id]);
+        $stmt = "SELECT * FROM tasks WHERE 1=1 AND user_id = :u ";
+        $placeholder = [':u' => $user_id];
+
+        if(isset($_GET['completion']) && $_GET['completion'] !== ""){
+            $stmt .= "AND is_done = :done ";
+            $placeholder[':done'] = $_GET['completion'];
+        }
+        if(isset($_GET['due_after']) && $_GET['due_after'] !== ""){
+            $stmt .= "AND due_date > :due_after ";
+            $placeholder[':due_after'] = $_GET['due_after'];
+        }
+        if(isset($_GET['due_before']) && $_GET['due_before'] !== ""){
+            $stmt .= "AND due_date < :due_before ";
+            $placeholder[':due_before'] = $_GET['due_before'];
+        }
+        if(isset($_GET['priority']) && !empty($_GET['priority'])){
+            $priorityArr = $_GET['priority'];
+            $priorityPlaceholder = [];
+            foreach($priorityArr as $index => $priority){
+                $priorityPlaceholder[] = ":$priority";
+                $placeholder[":$priority"] = $priority;
+            }
+            $stmt .= "AND priority IN (" . implode(", ",$priorityPlaceholder) .") ";
+        }
+        if(isset($_GET['name']) && $_GET['name'] !== ""){
+            $name = $_GET['name'];
+            $stmt .= "AND name LIKE '%$name%' ";
+        }
+
+        $stmt .= "ORDER BY created_date DESC";
+
+        $query = $this->pdo->prepare($stmt);
+        $query->execute($placeholder);
         return $query->fetchAll();
     }
 
