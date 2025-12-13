@@ -34,7 +34,8 @@ class Task{
         }
         if(isset($_GET['name']) && $_GET['name'] !== ""){
             $name = $_GET['name'];
-            $stmt .= "AND name LIKE '%$name%' ";
+            $stmt .= "AND name LIKE :name";
+            $placeholder[':name'] = "%$name%";
         }
 
         $stmt .= "ORDER BY created_date DESC";

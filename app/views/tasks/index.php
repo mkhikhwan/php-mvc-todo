@@ -25,36 +25,49 @@
             <div class="form-group">
                 <label class="form-label">Task Completion:</label>
                 <select name="completion">
-                    <option value="">All</option>
-                    <option value="1">Completed</option>
-                    <option value="0">Incomplete</option>
+                    <option value="" <?= $_GET['completion'] ? 'selected' : '' ?> >All</option>
+                    <option value="1" <?= $_GET['completion'] ? 'selected' : '' ?> >Completed</option>
+                    <option value="0" <?= $_GET['completion'] ? 'selected' : '' ?> >Incomplete</option>
                 </select>
             </div>
 
             <!-- Due Date Range -->
             <div class="form-group">
                 <label class="form-label">Due Date Range:</label>
-                <input type="datetime-local" name="due_after">
+                <input type="datetime-local" name="due_after" 
+                    value="<?= isset($_GET['due_after']) ? htmlspecialchars($_GET['due_after']) : '' ?>"
+                >
                 <p style="font-weight: 600; display:flex; align-items:center; font-size:20px; margin: 0px 1rem;"> ~ </p>
-                <input type="datetime-local" name="due_before">
+                <input type="datetime-local" name="due_before" 
+                    value="<?= isset($_GET['due_before']) ? htmlspecialchars($_GET['due_before']) : '' ?>"
+                >
             </div>
 
             <!-- Priority -->
             <div class="form-group">
+                <?php 
+                    $priority = $_GET['priority'] ?? [];
+                ?>
                 <label class="form-label">Priority:</label>
                 <div style="display:block;">
                     <label style="display:flex; gap:20px; margin-bottom:16px;">
-                        <input type="checkbox" class="chk" name="priority[]" value="low">
+                        <input type="checkbox" class="chk" name="priority[]" value="low" 
+                            <?= in_array('low', $priority) ? 'checked' : '' ?>
+                        >
                         <span class="task-priority task-priority-low">low</span>
                     </label>
 
                     <label style="display:flex; gap:20px; margin-bottom:16px;">
-                        <input type="checkbox" class="chk" name="priority[]" value="medium">
+                        <input type="checkbox" class="chk" name="priority[]" value="medium"
+                            <?= in_array('medium', $priority) ? 'checked' : '' ?>
+                        >
                         <span class="task-priority task-priority-medium">medium</span>
                     </label>
 
                     <label style="display:flex; gap:20px;">
-                        <input type="checkbox" class="chk" name="priority[]" value="high">
+                        <input type="checkbox" class="chk" name="priority[]" value="high"
+                            <?= in_array('high', $priority) ? 'checked' : '' ?>
+                        >
                         <span class="task-priority task-priority-high">high</span>
                     </label>
                 </div>
