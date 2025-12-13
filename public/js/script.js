@@ -72,6 +72,10 @@ if(filterButton){
     });
 }
 
+function clearFilters(){
+    window.location.href = window.location.pathname;
+}
+
 // Task Button Actions
 const taskItems = document.querySelectorAll(".task-item");
 if(taskItems){

@@ -80,7 +80,8 @@
             </div>
 
             <div style="display:flex; justify-content:left;">
-                <button class="btn btn-ghost" style="width:240px;">Filter</button>
+                <button class="btn btn-primary" style="width:50%; margin-right: 24px;">Filter</button>
+                <a href="/tasks" class="btn btn-ghost" style="width:50%">Clear Filters</a>
             </div>
         </form>
     </div>
