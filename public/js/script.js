@@ -60,6 +60,10 @@ if(addTaskForm){
             // Submit Successful
         }
     });
+
+    document.getElementById("taskAddClear").addEventListener('click', (e)=>{
+        addTaskForm.reset();
+    });
 }
 
 // Filter Task
