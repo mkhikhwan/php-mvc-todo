@@ -25,6 +25,8 @@ class TaskController extends Controller{
 
     public function viewTask($taskId){
         $task = $this->taskModel->viewTask($taskId);
+        $this->assertUserAccess($_SESSION['user_id'], $task['user_id']);
+
         $this->view('tasks/viewTask', [
             'task' => $task
         ]);
@@ -51,6 +53,10 @@ class TaskController extends Controller{
 
     public function deleteTask(){
         $taskId = $_POST['id'];
+
+        // Check Id
+        $task = $this->taskModel->viewTask($taskId);
+        $this->assertUserAccess($_SESSION['user_id'], $task['user_id']);
 
         if(!isset($taskId)){
             $_SESSION['flash_message'] = ['error' => "There's soemthing wrong with performing the action. Please try again."];
@@ -81,6 +87,8 @@ class TaskController extends Controller{
 
     public function editTask($taskId){
         $task = $this->taskModel->viewTask($taskId);
+        $this->assertUserAccess($_SESSION['user_id'], $task['user_id']);
+
         $this->view('tasks/editTask', [
             'priority' => ['low', 'medium', 'high'],
             'task' => $task
@@ -93,6 +101,10 @@ class TaskController extends Controller{
         $taskDescription = $_POST["task-description"];
         $taskDue = $_POST["task-due"];
         $taskPriority = $_POST["task-priority"];
+
+        // Check Id
+        $task = $this->taskModel->viewTask($taskId);
+        $this->assertUserAccess($_SESSION['user_id'], $task['user_id']);
 
         $ok = $this->taskModel->editTask($taskId, $taskName, $taskDescription, $taskDue, $taskPriority);
         if($ok){

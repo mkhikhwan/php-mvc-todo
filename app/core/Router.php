@@ -19,9 +19,7 @@ class Router{
         $action = $this->matchRoute($method, $parsed_url);
 
         if(!$action){
-            http_response_code(404);
-            echo "404 Not Found";
-            return;
+            throw new NotFoundException();
         }
 
         [$controllerName, $methodName, $params] = $action;

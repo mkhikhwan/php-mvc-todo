@@ -16,6 +16,12 @@ class Controller{
             $this->redirect("/login");
         }
     }
+
+    protected function assertUserAccess(int $currentUserId, int $resourceOwnerId){
+        if($currentUserId !== $resourceOwnerId){
+            throw new ForbiddenException();
+        }
+    }
 }
 
 ?>
