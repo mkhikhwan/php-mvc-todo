@@ -25,6 +25,9 @@ class TaskController extends Controller{
 
     public function viewTask($taskId){
         $task = $this->taskModel->viewTask($taskId);
+        if(!$task){
+            throw new NotFoundException();
+        }
         $this->assertUserAccess($_SESSION['user_id'], $task['user_id']);
 
         $this->view('tasks/viewTask', [
