@@ -33,7 +33,6 @@ A simple **ToDo List** application built from scratch using **PHP MVC**, intende
 This project is designed for learning PHP and understanding **MVC architecture**, routing, and user authentication.
 
 ## Page Examples
-Below are some example pages from the application to demonstrate the UI and user flow.
 
 ### Landing Page
 The initial page shown to users before authentication.
