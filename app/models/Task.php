@@ -37,8 +37,15 @@ class Task{
             $stmt .= "AND name LIKE :name";
             $placeholder[':name'] = "%$name%";
         }
+        if(
+            isset($_GET['sort_by']) && $_GET['sort_by'] !== "" &&
+            isset($_GET['sort_order']) && $_GET['sort_order'] !== ""
+        ){
+            $sort_by = $_GET['sort_by'];
+            $sort_order = strtoupper($_GET['sort_order']);
 
-        $stmt .= "ORDER BY created_date DESC";
+            $stmt .= "ORDER BY $sort_by $sort_order";
+        }
 
         $query = $this->pdo->prepare($stmt);
         $query->execute($placeholder);
