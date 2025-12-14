@@ -3,7 +3,7 @@
 A simple **ToDo List** application built from scratch using **PHP MVC**, intended for learning purposes. The app demonstrates routing, authentication, and basic task management.
 
 ## Status
-**Ongoing** – currently under development and learning phase.
+**Done** – All the features are implemented. Will work on Optional later. 
 
 ## Features
 
