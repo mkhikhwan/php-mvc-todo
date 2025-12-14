@@ -53,3 +53,8 @@ Displays the user's task list with filtering and sorting options.
 Form for creating a new task with title, description, due date, and priority.
 
 ![Add Task Page](docs/examples/add_task.png)
+
+### Filter Tasks
+Form popup for filtering tasks on the main page.
+
+![Add Task Page](docs/examples/filter_task.png)
