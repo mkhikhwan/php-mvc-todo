@@ -31,3 +31,25 @@ A simple **ToDo List** application built from scratch using **PHP MVC**, intende
 
 ## Purpose
 This project is designed for learning PHP and understanding **MVC architecture**, routing, and user authentication.
+
+## Page Examples
+Below are some example pages from the application to demonstrate the UI and user flow.
+
+### Landing Page
+The initial page shown to users before authentication.
+
+![Landing Page](docs/examples/landing_page.png)
+
+---
+
+### Main Page (After Login)
+Displays the user's task list with filtering and sorting options.
+
+![Main Page](docs/examples/index.png)
+
+---
+
+### Add Task Page
+Form for creating a new task with title, description, due date, and priority.
+
+![Add Task Page](docs/examples/add_task.png)
